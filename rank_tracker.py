@@ -301,6 +301,69 @@ class KeywordRankTracker:
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(export_data, f, indent=2, ensure_ascii=False)
     
+    def generate_results_text(self, results: Dict[str, PlatformResponse]) -> str:
+        """Generate formatted results text and return as string"""
+        output_lines = []
+        
+        for platform, response in results.items():
+            output_lines.append("=" * 60)
+            output_lines.append(f"Platform: {platform.upper()}")
+            output_lines.append(f"Model: {response.model}")
+            output_lines.append(f"Cost: ${response.cost:.4f}")
+            output_lines.append(f"Tokens: {response.input_tokens} in / {response.output_tokens} out")
+            output_lines.append(f"Web Search: {response.web_search_used}")
+            
+            if response.error:
+                output_lines.append(f"ERROR: {response.error}")
+            else:
+                output_lines.append("\nTop Rankings:")
+                for item in response.ranked_items[:5]:  # Show top 5
+                    output_lines.append(f"  {item.rank}. {item.title}")
+                    if item.description:
+                        output_lines.append(f"     {item.description[:100]}...")
+        
+        output_lines.append("=" * 60)
+        output_lines.append("COMPARISON & ANALYSIS")
+        comparison = self.compare_rankings(results)
+        
+        # Show average rankings
+        output_lines.append("\n📊 AVERAGE RANKINGS (sorted by best average):")
+        output_lines.append("-" * 50)
+        for i, (title, data) in enumerate(list(comparison["average_rankings"].items())[:10], 1):
+            output_lines.append(f"{i}. {title}")
+            output_lines.append(f"   Average Rank: {data['average_rank']} | Appears on: {data['appearances']} platform(s)")
+            output_lines.append(f"   Individual ranks: {data['individual_ranks']} ({', '.join(data['platforms'])})")
+        
+        output_lines.append("\n🔗 Common items across platforms:")
+        for common in comparison["common_items"][:5]:
+            output_lines.append(f"  - {common['item']} (found on: {', '.join(common['platforms'])})")
+        
+        total_cost = sum(r.cost for r in results.values() if not r.error)
+        output_lines.append(f"\n💰 Total cost: ${total_cost:.4f}")
+        
+        return "\n".join(output_lines)
+    
+    def export_to_txt(self, results: Dict[str, PlatformResponse], keyword: str):
+        """Export results to text file named after the keyword"""
+        # Clean the keyword to create a valid filename
+        clean_keyword = "".join(c for c in keyword if c.isalnum() or c in (' ', '-', '_')).rstrip()
+        clean_keyword = clean_keyword.replace(' ', '_')
+        filename = f"{clean_keyword}.txt"
+        
+        # Get formatted results text
+        results_text = self.generate_results_text(results)
+        
+        # Add header with timestamp and keyword
+        header = f"Keyword Rank Tracker Results\n"
+        header += f"Keyword: {keyword}\n"
+        header += f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+        header += "=" * 60 + "\n\n"
+        
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write(header + results_text)
+        
+        return filename
+    
     def print_results(self, results: Dict[str, PlatformResponse]):
         """Print formatted results to console"""
         for platform, response in results.items():

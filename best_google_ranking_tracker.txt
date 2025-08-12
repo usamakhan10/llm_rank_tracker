@@ -1,0 +1,88 @@
+Keyword Rank Tracker Results
+Keyword: best google ranking tracker
+Timestamp: 2025-08-12 08:18:42
+============================================================
+
+============================================================
+Platform: CHATGPT
+Model: gpt-4o-mini-2024-07-18
+Cost: $0.0001
+Tokens: 439 in / 56 out
+Web Search: False
+
+Top Rankings:
+  1. SEMrush
+  2. Ahrefs
+  3. Moz Pro
+  4. SERPWatcher
+  5. AccuRanker
+============================================================
+Platform: PERPLEXITY
+Model: sonar
+Cost: $0.0052
+Tokens: 136 in / 62 out
+Web Search: True
+
+Top Rankings:
+  1. Semrush
+  2. Ahrefs
+  3. AccuRanker
+  4. Rank Tracker by SEO PowerSuite
+  5. Google Search Console
+============================================================
+Platform: GEMINI
+Model: gemini-2.5-flash
+Cost: $0.0351
+Tokens: 144 in / 101 out
+Web Search: True
+
+Top Rankings:
+  1. Semrush
+  2. Ahrefs
+  3. SERPWatcher by Mangools
+  4. SE Ranking
+  5. Nightwatch
+============================================================
+COMPARISON & ANALYSIS
+
+📊 AVERAGE RANKINGS (sorted by best average):
+--------------------------------------------------
+1. SEMrush
+   Average Rank: 1.0 | Appears on: 3 platform(s)
+   Individual ranks: [1, 1, 1] (chatgpt, perplexity, gemini)
+2. Ahrefs
+   Average Rank: 2.0 | Appears on: 3 platform(s)
+   Individual ranks: [2, 2, 2] (chatgpt, perplexity, gemini)
+3. Moz Pro
+   Average Rank: 3.0 | Appears on: 1 platform(s)
+   Individual ranks: [3] (chatgpt)
+4. SERPWatcher
+   Average Rank: 4.0 | Appears on: 1 platform(s)
+   Individual ranks: [4] (chatgpt)
+5. Rank Tracker by SEO PowerSuite
+   Average Rank: 4.0 | Appears on: 1 platform(s)
+   Individual ranks: [4] (perplexity)
+6. SERPWatcher by Mangools
+   Average Rank: 4.5 | Appears on: 2 platform(s)
+   Individual ranks: [6, 3] (perplexity, gemini)
+7. AccuRanker
+   Average Rank: 4.67 | Appears on: 3 platform(s)
+   Individual ranks: [5, 3, 6] (chatgpt, perplexity, gemini)
+8. Nightwatch
+   Average Rank: 5.0 | Appears on: 1 platform(s)
+   Individual ranks: [5] (gemini)
+9. Rank Tracker
+   Average Rank: 6.0 | Appears on: 1 platform(s)
+   Individual ranks: [6] (chatgpt)
+10. Google Search Console
+   Average Rank: 6.0 | Appears on: 2 platform(s)
+   Individual ranks: [7, 5] (chatgpt, perplexity)
+
+🔗 Common items across platforms:
+  - semrush (found on: chatgpt, perplexity, gemini)
+  - ahrefs (found on: chatgpt, perplexity, gemini)
+  - accuranker (found on: chatgpt, perplexity, gemini)
+  - google search console (found on: chatgpt, perplexity)
+  - se ranking (found on: chatgpt, gemini)
+
+💰 Total cost: $0.0404

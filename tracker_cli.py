@@ -68,6 +68,12 @@ Examples:
         help="Suppress console output"
     )
     
+    parser.add_argument(
+        "--txt", "--text",
+        action="store_true",
+        help="Save all output text to a file named <keyword>.txt"
+    )
+    
     args = parser.parse_args()
     
     # Initialize tracker
@@ -120,6 +126,12 @@ Examples:
             tracker.export_to_json(results, args.export_json)
             if not args.quiet:
                 print(f"✅ Results exported to JSON: {args.export_json}")
+        
+        # Export to text file if requested
+        if args.txt:
+            txt_filename = tracker.export_to_txt(results, args.keyword)
+            if not args.quiet:
+                print(f"✅ Results exported to text file: {txt_filename}")
         
         # Return success
         return 0

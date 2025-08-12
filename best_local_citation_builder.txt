@@ -1,0 +1,88 @@
+Keyword Rank Tracker Results
+Keyword: best local citation builder
+Timestamp: 2025-08-12 08:20:43
+============================================================
+
+============================================================
+Platform: CHATGPT
+Model: gpt-4o-mini-2024-07-18
+Cost: $0.0001
+Tokens: 439 in / 59 out
+Web Search: False
+
+Top Rankings:
+  1. BrightLocal
+  2. Moz Local
+  3. Yext
+  4. Whitespark
+  5. Synup
+============================================================
+Platform: PERPLEXITY
+Model: sonar
+Cost: $0.0052
+Tokens: 136 in / 52 out
+Web Search: True
+
+Top Rankings:
+  1. BrightLocal
+  2. Whitespark
+  3. SearchAtlas
+  4. Google Business Profile
+  5. Apple Maps
+============================================================
+Platform: GEMINI
+Model: gemini-2.5-flash
+Cost: $0.0351
+Tokens: 144 in / 73 out
+Web Search: True
+
+Top Rankings:
+  1. BrightLocal
+  2. Whitespark
+  3. Moz Local
+  4. Yext
+  5. Synup
+============================================================
+COMPARISON & ANALYSIS
+
+📊 AVERAGE RANKINGS (sorted by best average):
+--------------------------------------------------
+1. BrightLocal
+   Average Rank: 1.0 | Appears on: 3 platform(s)
+   Individual ranks: [1, 1, 1] (chatgpt, perplexity, gemini)
+2. Moz Local
+   Average Rank: 2.5 | Appears on: 2 platform(s)
+   Individual ranks: [2, 3] (chatgpt, gemini)
+3. Whitespark
+   Average Rank: 2.67 | Appears on: 3 platform(s)
+   Individual ranks: [4, 2, 2] (chatgpt, perplexity, gemini)
+4. SearchAtlas
+   Average Rank: 3.0 | Appears on: 1 platform(s)
+   Individual ranks: [3] (perplexity)
+5. Yext
+   Average Rank: 3.5 | Appears on: 2 platform(s)
+   Individual ranks: [3, 4] (chatgpt, gemini)
+6. Google Business Profile
+   Average Rank: 4.0 | Appears on: 1 platform(s)
+   Individual ranks: [4] (perplexity)
+7. Synup
+   Average Rank: 5.0 | Appears on: 2 platform(s)
+   Individual ranks: [5, 5] (chatgpt, gemini)
+8. Apple Maps
+   Average Rank: 5.0 | Appears on: 1 platform(s)
+   Individual ranks: [5] (perplexity)
+9. SEMrush
+   Average Rank: 6.0 | Appears on: 1 platform(s)
+   Individual ranks: [6] (chatgpt)
+10. Hotfrog
+   Average Rank: 6.0 | Appears on: 1 platform(s)
+   Individual ranks: [6] (perplexity)
+
+🔗 Common items across platforms:
+  - brightlocal (found on: chatgpt, perplexity, gemini)
+  - moz local (found on: chatgpt, gemini)
+  - yext (found on: chatgpt, gemini)
+  - whitespark (found on: chatgpt, perplexity, gemini)
+  - synup (found on: chatgpt, gemini)
+
+💰 Total cost: $0.0404

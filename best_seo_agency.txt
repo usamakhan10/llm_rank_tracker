@@ -1,0 +1,96 @@
+(.venv) C:\Users\User\Desktop\work\llm_rank_tracker>python tracker_cli.py -k "best seo agency" 
+
+🔍 Tracking keyword: 'best seo agency'
+📅 Timestamp: 2025-08-12 07:52:07
+🌐 Querying: all platforms
+🔎 Web search: enabled
+⚡ Mode: parallel
+
+Querying platforms...
+
+============================================================
+Platform: PERPLEXITY
+Model: sonar
+Cost: $0.0052
+Tokens: 135 in / 55 out
+Web Search: True
+
+Top Rankings:
+  1. Single Grain
+  2. Victorious
+  3. WebFX
+  4. Ignite Visibility
+  5. SEOValley Solutions
+
+============================================================
+Platform: CHATGPT
+Model: gpt-4o-mini-2024-07-18
+Cost: $0.0251
+Tokens: 438 in / 68 out
+Web Search: True
+
+Top Rankings:
+  1. Victorious
+  2. Searchbloom
+  3. Outpace
+  4. Sure Oak
+  5. HigherVisibility
+
+============================================================
+Platform: GEMINI
+Model: gemini-2.5-flash
+Cost: $0.0351
+Tokens: 143 in / 91 out
+Web Search: True
+
+Top Rankings:
+  1. SmartSites
+  2. Lyfe Marketing
+  3. Ignite Visibility
+  4. Victorious
+  5. WebFX
+
+============================================================
+COMPARISON & ANALYSIS
+
+📊 AVERAGE RANKINGS (sorted by best average):
+--------------------------------------------------
+1. Single Grain
+   Average Rank: 1.0 | Appears on: 1 platform(s)
+   Individual ranks: [1] (perplexity)
+2. Lyfe Marketing
+   Average Rank: 2.0 | Appears on: 1 platform(s)
+   Individual ranks: [2] (gemini)
+3. Victorious
+   Average Rank: 2.33 | Appears on: 3 platform(s)
+   Individual ranks: [2, 1, 4] (perplexity, chatgpt, gemini)
+4. Outpace
+   Average Rank: 3.0 | Appears on: 1 platform(s)
+   Individual ranks: [3] (chatgpt)
+5. Ignite Visibility
+   Average Rank: 3.5 | Appears on: 2 platform(s)
+   Individual ranks: [4, 3] (perplexity, gemini)
+6. SmartSites
+   Average Rank: 4.0 | Appears on: 2 platform(s)
+   Individual ranks: [7, 1] (perplexity, gemini)
+7. Sure Oak
+   Average Rank: 4.0 | Appears on: 1 platform(s)
+   Individual ranks: [4] (chatgpt)
+8. SEOValley Solutions
+   Average Rank: 5.0 | Appears on: 1 platform(s)
+   Individual ranks: [5] (perplexity)
+9. WebFX
+   Average Rank: 5.33 | Appears on: 3 platform(s)
+   Individual ranks: [3, 8, 5] (perplexity, chatgpt, gemini)
+10. Searchbloom
+   Average Rank: 5.5 | Appears on: 2 platform(s)
+   Individual ranks: [2, 9] (chatgpt, gemini)
+
+🔗 Common items across platforms:
+  - victorious (found on: perplexity, chatgpt, gemini)
+  - webfx (found on: perplexity, chatgpt, gemini)
+  - ignite visibility (found on: perplexity, gemini)
+  - smartsites (found on: perplexity, gemini)
+  - searchbloom (found on: chatgpt, gemini)
+
+💰 Total cost: $0.0654

@@ -1,0 +1,95 @@
+
+🔍 Tracking keyword: 'best local rank tracker software'
+📅 Timestamp: 2025-08-12 08:12:34
+🌐 Querying: all platforms
+🔎 Web search: enabled
+⚡ Mode: parallel
+
+Querying platforms...
+
+============================================================
+Platform: CHATGPT
+Model: gpt-4o-mini-2024-07-18
+Cost: $0.0251
+Tokens: 440 in / 81 out
+Web Search: True
+
+Top Rankings:
+  1. Semrush Local
+  2. BrightLocal
+  3. Local Falcon
+  4. SE Ranking
+  5. RankCaddy
+
+============================================================
+Platform: PERPLEXITY
+Model: sonar
+Cost: $0.0052
+Tokens: 137 in / 58 out
+Web Search: True
+
+Top Rankings:
+  1. GTrack
+  2. BrightLocal
+  3. Whitespark
+  4. Local Falcon
+  5. Local Dominator
+
+============================================================
+Platform: GEMINI
+Model: gemini-2.5-flash
+Cost: $0.0351
+Tokens: 145 in / 75 out
+Web Search: True
+
+Top Rankings:
+  1. GTrack
+  2. BrightLocal
+  3. Local Falcon
+  4. Whitespark
+  5. SE Ranking
+
+============================================================
+COMPARISON & ANALYSIS
+
+📊 AVERAGE RANKINGS (sorted by best average):
+--------------------------------------------------
+1. Semrush Local
+   Average Rank: 1.0 | Appears on: 1 platform(s)
+   Individual ranks: [1] (chatgpt)
+2. GTrack
+   Average Rank: 1.0 | Appears on: 2 platform(s)
+   Individual ranks: [1, 1] (perplexity, gemini)
+3. BrightLocal
+   Average Rank: 2.0 | Appears on: 3 platform(s)
+   Individual ranks: [2, 2, 2] (chatgpt, perplexity, gemini)
+4. Local Falcon
+   Average Rank: 3.33 | Appears on: 3 platform(s)
+   Individual ranks: [3, 4, 3] (chatgpt, perplexity, gemini)
+5. Whitespark
+   Average Rank: 3.5 | Appears on: 2 platform(s)
+   Individual ranks: [3, 4] (perplexity, gemini)
+6. RankCaddy
+   Average Rank: 5.0 | Appears on: 1 platform(s)
+   Individual ranks: [5] (chatgpt)
+7. Local Dominator
+   Average Rank: 5.0 | Appears on: 1 platform(s)
+   Individual ranks: [5] (perplexity)
+8. SE Ranking
+   Average Rank: 6.0 | Appears on: 3 platform(s)
+   Individual ranks: [4, 9, 5] (chatgpt, perplexity, gemini)
+9. AccuRanker
+   Average Rank: 6.0 | Appears on: 1 platform(s)
+   Individual ranks: [6] (chatgpt)
+10. Semrush
+   Average Rank: 6.0 | Appears on: 1 platform(s)
+   Individual ranks: [6] (perplexity)
+
+🔗 Common items across platforms:
+  - brightlocal (found on: chatgpt, perplexity, gemini)
+  - local falcon (found on: chatgpt, perplexity, gemini)
+  - se ranking (found on: chatgpt, perplexity, gemini)
+  - nightwatch (found on: chatgpt, perplexity)
+  - serpwatcher by mangools (found on: chatgpt, perplexity)
+
+💰 Total cost: $0.0654
