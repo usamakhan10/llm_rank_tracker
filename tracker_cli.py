@@ -68,12 +68,6 @@ Examples:
         help="Suppress console output"
     )
     
-    parser.add_argument(
-        "--screenshot",
-        action="store_true",
-        help="Save CLI output as screenshot image"
-    )
-    
     args = parser.parse_args()
     
     # Initialize tracker
@@ -126,21 +120,6 @@ Examples:
             tracker.export_to_json(results, args.export_json)
             if not args.quiet:
                 print(f"✅ Results exported to JSON: {args.export_json}")
-        
-        # Save screenshot if requested
-        if args.screenshot:
-            try:
-                from terminal_screenshot import CLIScreenshotCapture
-                capture = CLIScreenshotCapture()
-                screenshot_path = capture.capture_tracker_output(args.keyword, results)
-                if not args.quiet:
-                    print(f"📸 Screenshot saved: {screenshot_path}")
-            except ImportError:
-                if not args.quiet:
-                    print("⚠️ Screenshot feature requires Pillow: pip install Pillow")
-            except Exception as e:
-                if not args.quiet:
-                    print(f"⚠️ Screenshot failed: {e}")
         
         # Return success
         return 0

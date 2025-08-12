@@ -1,7 +1,2 @@
-certifi==2025.8.3
-charset-normalizer==3.4.3
-idna==3.10
-Pillow==10.4.0
-python-dotenv==1.1.1
-requests==2.32.4
-urllib3==2.5.0
+requests>=2.31.0
+python-dotenv>=1.0.0
