@@ -67,12 +67,29 @@ class BaseLLMClient(ABC):
                 item_text = re.sub(r'\[|\]', '', item_text)  # Remove brackets
                 item_text = item_text.strip()
                 
+                # Extract URL if present (format: "Product Name - URL")
+                title = item_text
+                source_url = None
+                
+                # Look for URL pattern at the end
+                url_match = re.search(r'(.+?)\s*-\s*(https?://[^\s]+)$', item_text)
+                if url_match:
+                    title = url_match.group(1).strip()
+                    source_url = url_match.group(2).strip()
+                else:
+                    # Alternative: look for standalone URLs
+                    url_pattern = re.search(r'(https?://[^\s]+)', item_text)
+                    if url_pattern:
+                        source_url = url_pattern.group(1)
+                        title = re.sub(r'\s*(https?://[^\s]+)\s*', '', item_text).strip()
+                
                 # Skip if this looks like a description or feature
-                if self._is_likely_product_name(item_text):
+                if self._is_likely_product_name(title):
                     ranked_items.append(RankResult(
                         rank=rank,
-                        title=item_text,
-                        description=None  # No descriptions in strict format
+                        title=title,
+                        description=None,  # No descriptions in strict format
+                        source=source_url
                     ))
         
         # If we got very few results, fallback to more lenient extraction
@@ -125,11 +142,19 @@ class BaseLLMClient(ABC):
             bold_match = re.search(r'\*\*([^\*]+)\*\*', line)
             if bold_match:
                 title = bold_match.group(1).strip()
+                
+                # Extract URL if present in the same line
+                source_url = None
+                url_pattern = re.search(r'(https?://[^\s]+)', line)
+                if url_pattern:
+                    source_url = url_pattern.group(1)
+                
                 if self._is_likely_product_name(title):
                     ranked_items.append(RankResult(
                         rank=len(ranked_items) + 1,
                         title=title,
-                        description=None
+                        description=None,
+                        source=source_url
                     ))
         
         return ranked_items
@@ -137,19 +162,6 @@ class BaseLLMClient(ABC):
     def create_search_prompt(self, keyword: str) -> str:
         """Create a standardized prompt for ranking queries"""
         return (
-            f"List the top 10 {keyword}. Use ONLY this exact format:\n\n"
-            f"1. [Product Name]\n"
-            f"2. [Product Name]\n"
-            f"3. [Product Name]\n"
-            f"etc.\n\n"
-            f"STRICT RULES:\n"
-            f"- Write ONLY the product name/brand after each number\n"
-            f"- Do NOT add descriptions, features, or any other text\n"
-            f"- One product per line\n"
-            f"- No bullet points or sub-items\n"
-            f"- No additional commentary\n"
-            f"Example correct format:\n"
-            f"1. Fellow Atmos Vacuum Canister\n"
-            f"2. Coffee Gator Stainless Steel Container\n"
-            f"3. OXO POP Container"
+            f"List top 10 {keyword} with URLs. Format: '1. Product Name - URL'. "
+            f"Include source URL for each product. One per line, no descriptions."
         )

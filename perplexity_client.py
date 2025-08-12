@@ -50,7 +50,7 @@ class PerplexityClient(BaseLLMClient):
         task = {
             "user_prompt": prompt,
             "model_name": model_name,
-            "system_message": "You are a product ranking assistant. Follow the exact format requested. List only product names, no descriptions or features.",
+            "system_message": "Product ranking assistant. Format: '1. Product Name - Source_URL'. Include URLs where you found each product. No descriptions.",
             "max_output_tokens": max_tokens,
             "temperature": 0.2,
             "web_search_country_iso_code": "us"  # Perplexity supports localization

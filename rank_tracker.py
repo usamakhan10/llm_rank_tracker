@@ -245,7 +245,7 @@ class KeywordRankTracker:
     def export_to_csv(self, results: Dict[str, PlatformResponse], filename: str):
         """Export results to CSV file"""
         with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-            fieldnames = ['platform', 'rank', 'title', 'description', 'model', 'cost', 'web_search']
+            fieldnames = ['platform', 'rank', 'title', 'description', 'source', 'model', 'cost', 'web_search']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             
             writer.writeheader()
@@ -256,6 +256,7 @@ class KeywordRankTracker:
                         'rank': 'ERROR',
                         'title': response.error,
                         'description': '',
+                        'source': '',
                         'model': response.model,
                         'cost': 0,
                         'web_search': False
@@ -267,6 +268,7 @@ class KeywordRankTracker:
                             'rank': item.rank,
                             'title': item.title,
                             'description': item.description or '',
+                            'source': item.source or '',
                             'model': response.model,
                             'cost': response.cost,
                             'web_search': response.web_search_used
@@ -291,7 +293,8 @@ class KeywordRankTracker:
                     {
                         "rank": item.rank,
                         "title": item.title,
-                        "description": item.description
+                        "description": item.description,
+                        "source": item.source
                     }
                     for item in response.ranked_items
                 ],
@@ -319,6 +322,8 @@ class KeywordRankTracker:
                 output_lines.append("\nTop Rankings:")
                 for item in response.ranked_items[:5]:  # Show top 5
                     output_lines.append(f"  {item.rank}. {item.title}")
+                    if item.source:
+                        output_lines.append(f"     Source: {item.source}")
                     if item.description:
                         output_lines.append(f"     {item.description[:100]}...")
         
@@ -327,19 +332,19 @@ class KeywordRankTracker:
         comparison = self.compare_rankings(results)
         
         # Show average rankings
-        output_lines.append("\n📊 AVERAGE RANKINGS (sorted by best average):")
+        output_lines.append("\n[RANKINGS] AVERAGE RANKINGS (sorted by best average):")
         output_lines.append("-" * 50)
         for i, (title, data) in enumerate(list(comparison["average_rankings"].items())[:10], 1):
             output_lines.append(f"{i}. {title}")
             output_lines.append(f"   Average Rank: {data['average_rank']} | Appears on: {data['appearances']} platform(s)")
             output_lines.append(f"   Individual ranks: {data['individual_ranks']} ({', '.join(data['platforms'])})")
         
-        output_lines.append("\n🔗 Common items across platforms:")
+        output_lines.append("\n[COMMON] Common items across platforms:")
         for common in comparison["common_items"][:5]:
             output_lines.append(f"  - {common['item']} (found on: {', '.join(common['platforms'])})")
         
         total_cost = sum(r.cost for r in results.values() if not r.error)
-        output_lines.append(f"\n💰 Total cost: ${total_cost:.4f}")
+        output_lines.append(f"\n[COST] Total cost: ${total_cost:.4f}")
         
         return "\n".join(output_lines)
     
@@ -380,6 +385,8 @@ class KeywordRankTracker:
                 print(f"\nTop Rankings:")
                 for item in response.ranked_items[:5]:  # Show top 5
                     print(f"  {item.rank}. {item.title}")
+                    if item.source:
+                        print(f"     Source: {item.source}")
                     if item.description:
                         print(f"     {item.description[:100]}...")
         
@@ -388,16 +395,16 @@ class KeywordRankTracker:
         comparison = self.compare_rankings(results)
         
         # Show average rankings
-        print("\n📊 AVERAGE RANKINGS (sorted by best average):")
+        print("\n[RANKINGS] AVERAGE RANKINGS (sorted by best average):")
         print("-" * 50)
         for i, (title, data) in enumerate(list(comparison["average_rankings"].items())[:10], 1):
             print(f"{i}. {title}")
             print(f"   Average Rank: {data['average_rank']} | Appears on: {data['appearances']} platform(s)")
             print(f"   Individual ranks: {data['individual_ranks']} ({', '.join(data['platforms'])})")
         
-        print("\n🔗 Common items across platforms:")
+        print("\n[COMMON] Common items across platforms:")
         for common in comparison["common_items"][:5]:
             print(f"  - {common['item']} (found on: {', '.join(common['platforms'])})")
         
         total_cost = sum(r.cost for r in results.values() if not r.error)
-        print(f"\n💰 Total cost: ${total_cost:.4f}")
+        print(f"\n[COST] Total cost: ${total_cost:.4f}")

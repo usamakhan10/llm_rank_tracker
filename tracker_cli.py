@@ -94,12 +94,12 @@ Examples:
                 tracker.clients[platform].query = lambda k, m=model, ws=not args.no_web_search, mt=800, oq=original_query: oq(k, model_name=m, web_search=ws, max_tokens=mt)
     
     if not args.quiet:
-        print(f"\n🔍 Tracking keyword: '{args.keyword}'")
-        print(f"📅 Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        print(f"\n[*] Tracking keyword: '{args.keyword}'")
+        print(f"[*] Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         platforms_str = ", ".join(args.platforms) if args.platforms else "all platforms"
-        print(f"🌐 Querying: {platforms_str}")
-        print(f"🔎 Web search: {'disabled' if args.no_web_search else 'enabled'}")
-        print(f"⚡ Mode: {'sequential' if args.sequential else 'parallel'}")
+        print(f"[*] Querying: {platforms_str}")
+        print(f"[*] Web search: {'disabled' if args.no_web_search else 'enabled'}")
+        print(f"[*] Mode: {'sequential' if args.sequential else 'parallel'}")
         print("\nQuerying platforms...")
     
     try:
@@ -119,28 +119,28 @@ Examples:
         if args.export_csv:
             tracker.export_to_csv(results, args.export_csv)
             if not args.quiet:
-                print(f"\n✅ Results exported to CSV: {args.export_csv}")
+                print(f"\n[+] Results exported to CSV: {args.export_csv}")
         
         # Export to JSON if requested
         if args.export_json:
             tracker.export_to_json(results, args.export_json)
             if not args.quiet:
-                print(f"✅ Results exported to JSON: {args.export_json}")
+                print(f"[+] Results exported to JSON: {args.export_json}")
         
         # Export to text file if requested
         if args.txt:
             txt_filename = tracker.export_to_txt(results, args.keyword)
             if not args.quiet:
-                print(f"✅ Results exported to text file: {txt_filename}")
+                print(f"[+] Results exported to text file: {txt_filename}")
         
         # Return success
         return 0
         
     except KeyboardInterrupt:
-        print("\n\n⚠️  Operation cancelled by user")
+        print("\n\n[!] Operation cancelled by user")
         return 1
     except Exception as e:
-        print(f"\n❌ Error: {e}", file=sys.stderr)
+        print(f"\n[ERROR] {e}", file=sys.stderr)
         return 1
 
 if __name__ == "__main__":
